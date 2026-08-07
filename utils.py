@@ -1,8 +1,15 @@
 import spacy
+import subprocess
+import sys
 
-# Load English NLP model
-nlp = spacy.load("en_core_web_sm")
-
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(
+        [sys.executable, "-m", "spacy", "download", "en_core_web_sm"],
+        check=True
+    )
+    nlp = spacy.load("en_core_web_sm")
 def preprocess_text(text):
     """
     Cleans and preprocesses the extracted resume text.
