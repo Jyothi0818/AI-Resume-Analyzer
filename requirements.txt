@@ -2,6 +2,8 @@ streamlit
 pandas
 numpy
 PyPDF2
+pdfplumber
 spacy
-sentence-transformers
 scikit-learn
+reportlab
+sentence-transformers
